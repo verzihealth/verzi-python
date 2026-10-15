@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "verzi"
+version = "0.1.0"
+description = "Verzi Health: Medicare DME coverage on the date of service, with receipts. A small client for the public code check and the MCP config."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [{ name = "Verzi Health", email = "adrian@verzi.io" }]
+keywords = ["medicare", "dme", "hcpcs", "lcd", "coverage", "mcp", "revenue cycle"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Intended Audience :: Healthcare Industry",
+  "Topic :: Office/Business :: Financial",
+  "Operating System :: OS Independent",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://verzi.health"
+Documentation = "https://docs.verzi.health"
+"MCP server" = "https://mcp.verzi.health"
+
+[project.scripts]
+verzi = "verzi.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/verzi"]
